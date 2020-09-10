@@ -1,0 +1,8 @@
+<div class="create-wrapper">
+    <div class="create-title">{{title}}</div>
+    <input class="create-input" [(ngModel)]="taskname" placeholder="Enter task name" type="text">
+    <div class="create-btns">
+        <button class="cancel" [routerLink]="['/task/lists']">Cancel</button>
+        <button [disabled]="!taskname" class="submit" (click)="onSubmit(taskname)">Submit</button>
+    </div>
+</div>

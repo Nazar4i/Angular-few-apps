@@ -1,0 +1,77 @@
+{
+  "notes": [
+    {
+      "title": "First note",
+      "description": "Some test note\n",
+      "id": 1
+    },
+    {
+      "title": "Second note",
+      "description": "Just second note",
+      "id": 2
+    }
+  ],
+  "calc": [
+    {
+      "amount": 120,
+      "description": "Good one",
+      "type": "income",
+      "id": 11
+    },
+    {
+      "amount": -50,
+      "description": "Bad ones",
+      "type": "expenses",
+      "id": 12
+    }
+  ],
+  "kanban": [
+    {
+      "id": 0,
+      "type": "ideas",
+      "list": [
+        "Finish other projects",
+        "think about landing design"
+      ]
+    },
+    {
+      "id": 1,
+      "type": "research",
+      "list": []
+    },
+    {
+      "id": 2,
+      "type": "todo",
+      "list": [
+        "create project strucure"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "done",
+      "list": [
+        "Finist note app",
+        "Finish task app",
+        "Finish him..."
+      ]
+    }
+  ],
+  "lists": [],
+  "tasks": [
+    {
+      "name": "First item edited",
+      "ready": false,
+      "id": 1
+    },
+    {
+      "name": "efsf",
+      "ready": false,
+      "id": 3
+    },
+    {
+      "name": "12121",
+      "ready": false,
+      "id": 4
+    }
+  ]
+}

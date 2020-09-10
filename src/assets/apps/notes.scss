@@ -1,0 +1,210 @@
+note-app,
+note-form {
+
+    $primary-color: #4a148c;
+    $secondary-color: #dd2c00;
+    $dark-color: #263238;
+
+    $backgroud-light: #fff;
+    $backgroud-light-red: #ffccbc;
+    $backgrout-light-grey: #f1f1f1;
+
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+    
+    .header {
+        height: 50px;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    
+    .notes-wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    
+    
+    .bg-gradient {
+        background: radial-gradient(circle, rgba(74,20,140,1) 0%, rgba(255,204,188,1) 150%);
+    }
+    
+    .filter {
+        text-align: center;
+        width: 100%; 
+        margin-bottom: 10px; 
+    
+        .filter__icon {
+            position: absolute;
+            padding: 6px 14px;
+            color: $dark-color;
+        }
+    
+        .filter__input  {
+            outline: none;
+            border: 1px solid $dark-color;
+            background-color: $backgroud-light;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+            border-radius: 5px;
+            padding: 5px 35px;
+            width: 100%;
+            font-weight: bold;
+            color: $primary-color;
+        }
+        
+        .filter__input:focus {
+            box-shadow: 0 0 7px $primary-color;
+            border: 1px solid $primary-color;
+        }
+    }
+    
+    .notes-container {
+        max-height: 400px;
+        height: 100%;
+        overflow-y: auto;
+    
+        .note-item {
+            box-shadow: 0 0 7px -2px $dark-color;
+            border: 1px solid $dark-color;
+            border-radius: 5px;
+            padding: 25px 20px;
+            background-color: $backgroud-light;
+    
+            .note-item__exit {
+                position: relative;
+                float: right;
+                top: -10px;
+                background: $backgroud-light-red;
+                color: $secondary-color;
+                border-radius: 5px;
+                padding: 0px 7px;
+                cursor: pointer;
+                display: none;
+    
+                &:hover {
+                    transform: rotate(90deg);
+                    transition: all 0.2s ease-in;
+                }
+            }
+    
+            .note-item__title {
+                font-size: 18px;
+                color: $primary-color;
+                font-weight: bold;
+                outline: none;
+                cursor: pointer;
+            }
+    
+            .note-item__body {
+                position: relative;
+                max-height: 80px;
+                overflow: hidden;
+                
+                .note-item__description-blured {
+                    position: absolute;
+                    bottom: 0;
+                    height: 30%;
+                    width: 100%;
+                    background: linear-gradient(to bottom, rgba($backgroud-light, 0) 0%, rgba($backgroud-light, 0.8) 50%, $backgroud-light 100%);
+                }
+            }
+           
+            &:hover .note-item__exit {
+                display: block;
+            }
+        }
+    }
+    
+      .footer {
+          text-align: center;
+          margin-top: 40px;
+    
+          .footer-btn {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 5px;
+            background-color: $backgroud-light;
+            box-shadow: 0 0 7px $primary-color;
+            border: 1px solid $primary-color;
+            color: $primary-color;
+            padding: 10px 35px;
+            font-weight: bold;
+          }
+      }
+    
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: $backgrout-light-grey; 
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        background: $primary-color; 
+      }
+    
+    
+      .note-form {
+    
+        label {
+            font-size: 18px;
+            color: $primary-color;
+            font-weight: bold;
+            margin-bottom: 0;
+        }
+    
+        .note-form__input {
+            margin-bottom: 10px;
+        }
+    
+        .note-form__input,
+        .note-form__text {
+            outline: none;
+            border: 1px solid $dark-color;
+            background-color: $backgroud-light;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+            border-radius: 5px;
+            padding: 5px 15px;
+            width: 100%;
+            font-weight: normal;
+    
+            &:focus {
+                box-shadow: 0 0 7px $primary-color;
+                border: 1px solid $primary-color;
+            }
+        }
+    
+        .btn-wrap {
+            display: flex;
+            justify-content: flex-end;
+    
+            .btn-cancel {
+                border-radius: 5px;
+                background-color: $backgroud-light;
+                box-shadow: 0 0 7px $secondary-color;
+                border: 1px solid $secondary-color;
+                color: $secondary-color;
+                padding: 10px 35px;
+                font-weight: bold;
+                margin-right: 10px;
+            }
+    
+            .btn-submit {
+                border-radius: 5px;
+                background-color: $backgroud-light;
+                box-shadow: 0 0 7px $primary-color;
+                border: 1px solid $primary-color;
+                color: $primary-color;
+                padding: 10px 35px;
+                font-weight: bold;
+            }
+        }
+    }
+}

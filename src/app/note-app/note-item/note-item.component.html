@@ -1,0 +1,8 @@
+<div class="note-item" [ngStyle]="{'margin-bottom': isLast ? '0' : '15px'}">
+    <fa-icon class="note-item__exit" [icon]="faTimes" (click)="deleteNote(note.id)"></fa-icon>
+    <div class="note-item__title" [routerLink]="['/notes/view/', note.id]">{{note.title}}</div>
+    <div class="note-item__body">
+        <div class="note-item__description">{{note.description}}</div>
+        <div class="note-item__description-blured"></div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+@import "./apps/notes.scss";
+@import "./apps/calculator.scss";
+@import "./apps/kanban.scss";
+@import "./apps/tictac.scss";
+@import "./apps/covid.scss";
+@import "./apps/task.scss";
+
+body {
+    overflow-x: hidden;
+}

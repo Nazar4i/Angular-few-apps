@@ -1,0 +1,254 @@
+calculator {
+
+    .header {
+        background-color: #9fa8da;
+        color: #000;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .count-section {
+        background-color: #212121;
+        font-size: 36px;
+        color: #fff;
+        text-align: center;
+        padding: 70px;
+    }
+
+    .form-section {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+
+        input {
+            outline: none;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            background: #eee;
+            color: #424242;
+            padding: 3px 12px;
+        }
+
+        .calculator-form__amount-block {
+            display: inline;
+            position: relative;
+
+            .calculator-form__amount {
+                max-width: 90px;
+                width: 100%;
+            }
+
+            .calculator-form__icon {
+                position: absolute;
+                border: solid #424242;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 2px;
+                cursor: pointer;
+                opacity: 0.5;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            .calculator-form__icon-top {
+                top: 8px;
+                right: 7px;
+                transform: rotate(-135deg);
+                -webkit-transform: rotate(-135deg);
+            }
+
+            .calculator-form__icon-bottom {
+                bottom: 8px;
+                right: 7px;
+                transform: rotate(45deg);
+                -webkit-transform: rotate(45deg);
+            }
+        }
+
+        .calculator-form_description {
+            max-width: 330px;
+            width: 100%;
+        }
+
+        .calculator-form__btn {
+            outline: none;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            background: #7e57c2;
+            opacity: 0.6;
+            color: #fff;
+            padding: 3px 12px;
+
+            &:hover,
+            &:focus {
+                opacity: 1;
+            }
+        }
+    }
+
+    .separator {
+        height: 1px;
+        background-color: #eee;
+    }
+
+    .data-section {
+        display: flex;
+        justify-content: space-between;
+        max-width: 500px;
+        width: 100%;
+        margin: 30px auto;
+
+        .data-section__block {
+            max-width: 230px;
+            width: 100%;
+
+            .data-section__block-title {
+                font-size: 20px;
+                font-weight: bold;
+                text-transform: uppercase;
+                margin-bottom: 15px;
+            }
+
+            .data-section__block-list {
+                border: 1px solid #eee;
+                border-radius: 5px;
+                background: #eee;
+                color: #424242;
+                margin-bottom: 10px;
+
+                .block-list__item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative;
+                    cursor: pointer;
+                    padding: 3px 12px;
+
+                    .block-list__delete {
+                        position: absolute;
+                        top: -15px;
+                        right: -15px;
+                        background: #212121;
+                        color: #d50000;
+                        border-radius: 50%;
+                        cursor: pointer;
+                        display: none;
+                        width: 25px;
+                        height: 25px;
+                        line-height: 25px;
+                        text-align: center;
+                        opacity:0; 
+                        transition: 1s;
+                        animation: show 1s 1; 
+                        animation-fill-mode: forwards;
+
+                        @keyframes show{
+                            0%{ opacity:0; }
+                            100% { opacity:1; }
+                        }
+                    }
+
+                    .block-list__item-description {
+
+                    }
+
+                    .block-list__item-amount {
+                        padding: 2px 15px;
+                        border-radius: 5px;
+                        font-size: 14px;
+                    }
+
+                    &:hover .block-list__delete {
+                        display: block;
+                    }
+                }
+            }
+        }
+
+        .data-section__block-income  {
+
+            .data-section__block-title,
+            .block-list__item {
+                color: #43a047;
+
+                .block-list__item-amount {
+                    background: lighten($color: #43a047, $amount: 40) ;
+                }
+            }
+
+        }
+    
+        .data-section__block-expenses {
+
+            .data-section__block-title,
+            .block-list__item {
+                color: #d50000;
+
+                .block-list__item-amount {
+                    background: lighten($color: #d50000, $amount: 40) ;
+                }
+            }
+
+        }
+    }
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #eee inset !important;
+}
+
+
+.popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .popup-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #eee;
+    max-width: 540px;
+    width: 100%;
+
+    .popup-header {
+        display: flex;
+        justify-content: space-between;
+        
+        .popup-header__title {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+    }
+
+  }

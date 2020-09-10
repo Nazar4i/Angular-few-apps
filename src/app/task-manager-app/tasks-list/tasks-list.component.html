@@ -1,0 +1,9 @@
+<div class="tasks-list" >
+    <div class="tasks-list__item" *ngFor="let task of tasks">
+        {{task.name}}
+        <div class="tasks-list__item-icons">
+            <fa-icon class="task-edit" [icon]="faEdit" [routerLink]="['/task/edit-task', task.id]"></fa-icon>
+            <fa-icon class="task-delete" [icon]="faTrash" (click)="deleteTask(task.id)"></fa-icon>
+        </div>
+    </div>
+</div>

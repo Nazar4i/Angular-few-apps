@@ -1,0 +1,23 @@
+<div class="container">
+    <app-dashboard [totalConfirmed]="totalConfirmed" [totalActive]="totalActive" [totalDeaths]="totalDeaths" [totalRecovered]="totalRecovered">
+    </app-dashboard>
+    
+    <div class="options-wrap">
+        <div class="options-item">
+            <div class="options-item__title">Select case type</div>
+            <mat-radio-button class="options-item__radio" #c value="c" [checked]="true" (click)="updateChart(c.value)">Confirmed</mat-radio-button>
+            <mat-radio-button class="options-item__radio" #d value="d" (click)="updateChart(d.value)">Deaths</mat-radio-button>
+            <mat-radio-button class="options-item__radio" #r value="r" (click)="updateChart(r.value)">Recovered</mat-radio-button>
+            <mat-radio-button class="options-item__radio" #a value="a" (click)="updateChart(a.value)">Active</mat-radio-button>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <google-chart [type]='chart.PieChart' [options]='chart.options' style="width: 100%;" [height]='chart.height' [data]='datatable'></google-chart>
+    </div>
+    <div class="col">
+        <google-chart [type]='chart.ColumnChart' style="width: 100%;" [options]='chart.options' [height]='chart.height' [data]='datatable'></google-chart>
+    </div>
+</div>

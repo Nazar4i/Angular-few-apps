@@ -1,0 +1,83 @@
+<div class="header">kanban</div>
+<div class="kanban-container">
+  <div class="kanban-block">
+    <div class="kanban-block__title" style="cursor: pointer;" (click)="showInput()">Ideas <fa-icon class="title__icon" [icon]="faPlus"></fa-icon></div>
+    <div class="kanban-block__addField animate" [ngStyle]="{'display': isVisible ? 'flex' : 'none'}"><input [(ngModel)]="idea" type="text"> <fa-icon (click)="addIdea()" class="title-icon__safe" [icon]="faSave"></fa-icon></div>
+    <div
+      cdkDropList
+      #ideasList="cdkDropList"
+      [cdkDropListData]="ideas"
+      [cdkDropListConnectedTo]="[researchList]"
+      class="kanban-block__list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="kanban-block__list-item" *ngFor="let item of ideas" cdkDrag>
+        {{item}}
+      </div>
+    </div>
+  </div>
+
+  <div class="kanban-block">
+    <div class="kanban-block__title">Research <fa-icon class="title__icon" [icon]="faSearch"></fa-icon></div>
+  
+    <div
+      cdkDropList
+      #researchList="cdkDropList"
+      [cdkDropListData]="research"
+      [cdkDropListConnectedTo]="[ideasList, todoList]"
+      class="kanban-block__list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="kanban-block__list-item" *ngFor="let item of research" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+<div class="kanban-block">
+  <div class="kanban-block__title">To do <fa-icon class="title__icon" [icon]="faHammer"></fa-icon></div>
+  
+    <div
+      cdkDropList
+      #todoList="cdkDropList"
+      [cdkDropListData]="todo"
+      [cdkDropListConnectedTo]="[doneList, researchList]"
+      class="kanban-block__list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="kanban-block__list-item" *ngFor="let item of todo" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+  
+  <div class="kanban-block">
+    <div class="kanban-block__title">Done <fa-icon class="title__icon" [icon]="faCheckDouble"></fa-icon></div>
+  
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      #doneList="cdkDropList"
+      [cdkDropListConnectedTo]="[doneList]"
+      class="kanban-block__list"
+      (cdkDropListDropped)="drop($event)">
+      <div style="cursor: no-drop;text-decoration: line-through;" class="kanban-block__list-item" [cdkDragDisabled]="true" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+  
+</div>
+
+
+<!-- 
+<div class="popup" *ngIf="isOpen">
+  <div class="popup-content">
+    <div class="popup-header">
+        <div class="popup-header__title">Edit</div>
+        <fa-icon class="block-list__delete" [icon]="faTimes" (click)="closePopup()"></fa-icon>
+    </div>
+    <div class="popup-body">
+        <div class="form-section">
+            <div class="calculator-form__amount-block">
+                <input class="calculator-form__amount" type="number" name="calculator.amount" [(ngModel)]="calculator.amount" placeholder="Amount">
+                <i class="calculator-form__icon calculator-form__icon-top" (click)="countPlus()"></i>
+                <i class="calculator-form__icon calculator-form__icon-bottom" (click)="countMinus()"></i>
+            </div>
+            <input class="calculator-form_description" name="calculator.description" [(ngModel)]="calculator.description" type="text" placeholder="Description">
+            <button style="background-color: #43a047;color: #fff;" class="calculator-form__btn" (click)="edit()">Edit</button>
+        </div>
+    </div>
+  </div>
+</div> -->

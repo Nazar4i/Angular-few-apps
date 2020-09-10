@@ -1,0 +1,58 @@
+<div class="header">budget calculator</div>
+<div class="count-section" [ngStyle]="{'color': total == 0 ? '#fff' : total > 0 ? '#43a047' : '#d50000'}">{{total}}</div>
+<div class="form-section">
+    <div class="calculator-form__amount-block">
+        <input class="calculator-form__amount" type="number" name="calculator.amount" [(ngModel)]="calculator.amount" placeholder="Amount">
+        <i class="calculator-form__icon calculator-form__icon-top" (click)="countPlus()"></i>
+        <i class="calculator-form__icon calculator-form__icon-bottom" (click)="countMinus()"></i>
+    </div>
+    <input class="calculator-form_description" name="calculator.description" [(ngModel)]="calculator.description" type="text" placeholder="Description">
+    <button class="calculator-form__btn" (click)="add(calculator.amount, calculator.description)">Add</button>
+</div>
+<div class="separator"></div>
+<div class="data-section">
+    <div class="data-section__block data-section__block-income">
+        <div class="data-section__block-title">Income</div>
+        <ng-container *ngFor="let item of budget">
+            <div class="data-section__block-list" *ngIf="item.type == 'income'">
+                <div class="block-list__item">
+                    <fa-icon class="block-list__delete" [icon]="faTimes" (click)="deleteItem(item.id)"></fa-icon>
+                    <span class="block-list__item-description" (click)="openPopup(item.id)">{{item.description}}</span>
+                    <span class="block-list__item-amount">{{item.amount}}</span>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="data-section__block data-section__block-expenses">
+        <div class="data-section__block-title">Expenses</div>
+        <ng-container *ngFor="let item of budget">
+            <div class="data-section__block-list"  *ngIf="item.type == 'expenses'">
+                <div class="block-list__item" >
+                    <fa-icon class="block-list__delete" [icon]="faTimes" (click)="deleteItem(item.id)"></fa-icon>
+                    <span class="block-list__item-description" (click)="openPopup(item.id)">{{item.description}}</span>
+                    <span class="block-list__item-amount">{{item.amount}}</span>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+<div class="popup" *ngIf="isOpen">
+  <div class="popup-content">
+    <div class="popup-header">
+        <div class="popup-header__title">Edit</div>
+        <fa-icon class="block-list__delete" [icon]="faTimes" (click)="closePopup()"></fa-icon>
+    </div>
+    <div class="popup-body">
+        <div class="form-section">
+            <div class="calculator-form__amount-block">
+                <input class="calculator-form__amount" type="number" name="calculator.amount" [(ngModel)]="calculator.amount" placeholder="Amount">
+                <i class="calculator-form__icon calculator-form__icon-top" (click)="countPlus()"></i>
+                <i class="calculator-form__icon calculator-form__icon-bottom" (click)="countMinus()"></i>
+            </div>
+            <input class="calculator-form_description" name="calculator.description" [(ngModel)]="calculator.description" type="text" placeholder="Description">
+            <button style="background-color: #43a047;color: #fff;" class="calculator-form__btn" (click)="edit()">Edit</button>
+        </div>
+    </div>
+  </div>
+</div>

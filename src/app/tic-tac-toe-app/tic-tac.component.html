@@ -1,0 +1,13 @@
+<div class="header">Lets play tic tac toe!</div>
+
+<div class="tictac-wrapper">
+    <div class="tictac-info" *ngIf="!winner">Next move for {{currentPlayer}}!</div>
+    <div *ngIf="winner" class="tictac-info">Winner {{winner}}. <span style="cursor: pointer;" (click)="clear()">Start new one ?</span></div>
+
+    <div class="tictac-list">
+        <div class="tictac-list_item" *ngFor="let step of game; let i = index" (click)="set(i)">
+           {{step}}
+        </div>
+    </div>
+</div>
+

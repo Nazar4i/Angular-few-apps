@@ -1,0 +1,15 @@
+<div class="header bg-gradient"></div>
+<div class="notes-wrapper">
+    <div class="filter">
+        <fa-icon class="filter__icon" [icon]="faSearch"></fa-icon>
+        <input [(ngModel)]="filterList" name="filterList" type="text" class="filter__input" placeholder="Filter"> 
+    </div>
+    <div class="notes-container">
+        <note-item *ngFor="let note of notes | search:filterList, let i = index; let isLast = last;"
+            [note]="note" [isLast]="isLast"(deleteNoteItem)="deleteNote($event)">
+        </note-item> 
+    </div>
+    <div class="footer">
+        <button class="footer-btn" routerLink="/notes/create">Add note <fa-icon [icon]="faArrowRight"></fa-icon></button>
+    </div>
+</div>

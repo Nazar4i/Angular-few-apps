@@ -1,0 +1,60 @@
+<navigation></navigation>
+
+<div class="covid-title">COVID-19 CORONAVIRUS PANDEMIC</div>
+
+<router-outlet></router-outlet>
+
+<div class="table-wrapper">
+    <mat-form-field>
+        <mat-label>Filter</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+      </mat-form-field>
+    <div class="mat-elevation-z8">
+        <mat-table [dataSource]="dataSource" >
+            <ng-container matColumnDef="number">
+                <mat-header-cell *matHeaderCellDef> №. </mat-header-cell>
+                <mat-cell *matCellDef="let element; let i = index"> {{i + 1}} </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="country">
+                <mat-header-cell *matHeaderCellDef> Country  </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Country}} </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="newConfirmed">
+                <mat-header-cell *matHeaderCellDef> New Confirmed </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.NewConfirmed}} </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="newDeath">
+                <mat-header-cell *matHeaderCellDef> New Death </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.NewDeaths}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="newRecovered">
+                <mat-header-cell *matHeaderCellDef> New Recovered </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.NewRecovered}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="totalConfirmed">
+                <mat-header-cell *matHeaderCellDef> Total Confirmed </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.TotalConfirmed}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="totalDeath">
+                <mat-header-cell *matHeaderCellDef> Total Deaths </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.TotalDeaths}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="totalRecovered">
+                <mat-header-cell *matHeaderCellDef> Total Recovered </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.TotalRecovered}} </mat-cell>
+            </ng-container>
+          
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        
+          </mat-table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

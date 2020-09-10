@@ -1,0 +1,45 @@
+.header {
+    background: #01579b;
+    color: #FFF;
+    font-size: 24px;
+    padding: 15px;
+    text-align: center;
+}
+
+.tictac-wrapper {
+
+    background-color: #2D3E50;
+    height: 100%;
+
+    .tictac-info {
+        color: #FFF;
+        padding: 20px;
+        text-align: center;
+        font-size: 26px;
+        margin-bottom: 20px;
+    }
+
+    .tictac-list {
+
+        width: 240px;
+        height: 240px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        background-color: #34495E;
+    
+        .tictac-list_item {
+            width: 80px;
+            height: 80px;
+            border: 1px solid lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: cursive;
+            color: #FFF;
+            font-size: 60px;
+        }
+    
+    }
+}
+

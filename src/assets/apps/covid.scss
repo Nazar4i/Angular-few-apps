@@ -1,0 +1,128 @@
+covid {
+
+   .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #ddd;
+
+    .nav-brand {
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .nav-list {
+        display: flex;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        .nav-list__item {
+            margin-left: 5px;
+            
+            a {
+                font-size: 14px;
+                color: #333;
+                text-decoration: none;
+            }
+
+            
+        }
+    }
+   }
+
+   .covid-title {
+        max-width: 80%;
+        width: 100%;
+        margin: 20px auto;
+        text-align: center;
+        padding: 10px 0;
+        color: #333;
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 1px solid #333;
+   }
+
+   .active {
+    font-weight: bold;
+}
+
+.card-wrap {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0px;
+
+    .card-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 60px;
+        border: 2px solid #333;
+        border-radius: 3px;
+        line-height: 1;
+
+        .card-item__title {
+            font-size: 18px;
+        }
+
+        .card-item__stat {
+            font-size: 34px;
+            font-weight: 800;
+        }
+    }
+}
+
+    .charts-wrapper {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+        height: 500px;
+        padding: 20px;
+    }
+
+    .table-wrapper {
+        max-width: 90%;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+
+    .mat-slider-thumb-label {
+        width: 48px;
+        height: 48px;
+    }
+
+    .options-wrap {
+        display: flex;
+        justify-content: space-between;
+
+        .options-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .options-item__title {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            .options-item__radio {
+                margin-left: 10px;
+
+                label {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .country-selector {
+        display: flex;
+        justify-content: center;
+
+        .mat-form-field {
+            width: 400px;
+        }
+    }
+}

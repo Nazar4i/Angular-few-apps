@@ -1,0 +1,22 @@
+<div class="header bg-gradient"></div>
+<div class="notes-wrapper">
+    <form (ngSubmit)="onSubmit()" [formGroup]="noteForm" class="note-form">
+        <div class="form-group" style="display: flex; flex-direction: column">
+            
+            <label for="title">Title</label>
+            <input id="title" class="note-form__input" formControlName="title" required>
+            
+            
+            <label for="description">Body</label>
+            <textarea class="note-form__text" formControlName="description" id="description" cols="30" rows="10"></textarea>
+        
+        
+        </div>
+        <div class="btn-wrap">
+            <button routerLink="/notes" class="btn-cancel" type="button"> Cancel</button>
+            <button class="btn-submit" [disabled]="!noteForm.valid" type="submit">
+                Зберегти
+            </button>
+        </div>
+    </form>  
+</div>
